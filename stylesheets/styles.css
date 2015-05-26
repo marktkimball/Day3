@@ -1,3 +1,7 @@
+body{
+  background-color: #ECECEC;
+}
+
 header{
   width: 100%;
   background-color: transparent;
@@ -7,20 +11,21 @@ h1, h2, h3, h4, h5, h6{
   text-transform: uppercase;
 }
 
+.container{
+  width: 85%;
+  margin: auto;
+  background-color: white;
+}
+
 .landingImage{
   width: 100%;
   height: 300px;
-  position: absolute;
+  position: relative;
   left:0;
-}
-
-.landingImageOverlay{
-  width: 100%;
-  height: 300px;
-  position: absolute;
-  left:0;
-  background: #1D71B6;
-  opacity: 0.85;
+  background: linear-gradient(rgba(29,113,182,.75), rgba(29,113,182,.75)), url('../images/landingImage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #waveIcon{
@@ -38,6 +43,7 @@ header h1{
   font-weight: normal;
   font-size:75px;
   font-family: Geneva;
+  padding-bottom: 5px;
   text-shadow: 1px 1px 2px rgba(50, 50, 50, 1);
 }
 
@@ -45,6 +51,7 @@ header p{
   position: relative;
   top: -50px;
   text-align: center;
+  padding-top: 5px;
 }
 
 header h4{
@@ -168,6 +175,7 @@ blockquote{
 
 #profile{
   text-align: center;
+  height: 150px;
 }
 
 #profile h4{
@@ -192,6 +200,16 @@ blockquote{
 
 #ad a{
   float: right;
+}
+
+#sideBarHidden{
+  width: 97%;
+  height: auto;
+  display: inline-block;
+  padding: 30px 10px 0px 10px;
+  border-style: solid;
+  border-color: #AAA;
+  border-width: 1px 0px 0px 0px;
 }
 
 #lowerMainBlock{
@@ -220,6 +238,7 @@ blockquote{
   float: left;
   display: block;
   bottom: 0px;
+  transition: color 1s ease;
 }
 
 #popularPosts p{
@@ -240,12 +259,7 @@ blockquote{
 
 #popularPost1:hover{
   background: linear-gradient(rgba(29,113,182,0.25), rgba(29,113,182, 0.25)), url('../images/surfing.jpg');
-  width:25%;
-  height: 300px;
-  margin:0;
-  padding:0;
   background-size: cover;
-  position: relative;
   color: white;
 }
 
@@ -261,12 +275,7 @@ blockquote{
 
 #popularPost2:hover{
   background: linear-gradient(rgba(29,113,182,0.25), rgba(29,113,182, 0.25)), url('../images/tropical.jpg');
-  width:25%;
-  height: 300px;
-  margin:0;
-  padding:0;
   background-size: cover;
-  position: relative;
   color: white;
 }
 
@@ -282,12 +291,7 @@ blockquote{
 
 #popularPost3:hover{
   background: linear-gradient(rgba(29,113,182,0.25), rgba(29,113,182, 0.25)), url('../images/surfer.jpg');
-  width:25%;
-  height: 300px;
-  margin:0;
-  padding:0;
   background-size: cover;
-  position: relative;
   color: white;
 }
 
@@ -303,12 +307,7 @@ blockquote{
 
 #popularPost4:hover{
   background: linear-gradient(rgba(29,113,182,0.25), rgba(29,113,182, 0.25)), url('../images/drinks.jpg');
-  width:25%;
-  height: 300px;
-  margin:0;
-  padding:0;
   background-size: cover;
-  position: relative;
   color: white;
 }
 
@@ -340,12 +339,17 @@ footer img{
   margin-top:0px;
 }
 
+#copyright{
+  float: left;
+}
+
 #copyright p{
   margin-top: 20px;
 }
 
 #nav{
-  position: absolute;
+  position: relative;
+  float: right;
   display:inline-block;
   right:10%;
   margin-top: 30px;
@@ -361,14 +365,17 @@ footer img{
 
 #shareBlock{
   padding-left: 0px;
+  width: 100%;
+  margin: auto;
 }
 
 #shareBlock li{
-  margin-right: 10px;
+  width: 32%;
   background-color: #AAA;
   color: white;
-  font-size: 15px;
   font-weight: lighter;
+  font-size: 15px;
+  padding: 0;
 }
 
 #shareBlock li:hover{
@@ -386,6 +393,128 @@ i{
 
 #shareBlock p{
   display: inline-block;
-  padding: 10px;
+  padding: 5% 2% 5% 2%;
   margin: 0px;
+}
+
+@media all and (min-width: 901px){
+  #sideBarHidden{
+    display: none;
+  }
+}
+
+@media all and (max-width: 1200px){
+  .container{
+    width: 95%;
+  }
+  #popularPosts li{
+    width: 50%;
+    height: 500px;
+  }
+  #popularPosts p{
+    font-size: 2.75em;
+  }
+  #shareBlock li{
+    display: block;
+    margin-top: 5px;
+    width: 175px;
+  }
+}
+
+@media all and (max-width: 900px){
+  .landingImage{
+    height: 200px;
+  }
+  header{
+    font-size: 0.70em;
+  }
+  header h1{
+    font-size: 50px;
+  }
+  #popularPosts li{
+    height: 250px;
+  }
+  #popularPosts p{
+    font-size: 2em;
+  }
+  #sideBar{
+    display: none;
+  }
+  #ad{
+    height: auto;
+    width: 40%;
+    margin: 15px 5px 15px 5px;
+    float: right;
+  }
+  #ad img{
+    display: block;
+    float: right;
+    width: 100%;
+  }
+  #ad a{
+    display: block;
+  }
+  #mainBlock{
+    display: block;
+    float: left;
+    width: 90%;
+    margin: 40px 5% 40px 5%;
+  }
+  footer{
+    text-align: center;
+  }
+  #nav{
+    float: none;
+    right: 0;
+    display: inline-block;
+    font-size: 1em;
+    padding: 0;
+  }
+  #copyright{
+    float: none;
+    display: block;
+    padding: 0;
+    margin: auto;
+  }
+}
+
+@media all and (max-width: 550px){
+  .container{
+    width: 100%;
+  }
+  #waveIcon{
+    left: 0;
+  }
+  .landingImage h4{
+    left:0;
+  }
+  .landingImage ul{
+    right: 0;
+  }
+  header{
+    font-size: 0.60em;
+  }
+  header h1{
+    font-size: 35px;
+    padding-top: 20px;
+  }
+  header p{
+    padding-top: 20px;
+  }
+  #mainBlock h1{
+    font-size: 35px;
+  }
+  #mainBlock{
+    font-size: 0.9em;
+  }
+  #lowerMainBlock h1{
+    font-size: 35px;
+  }
+  #popularPosts li{
+    width: 100%;
+    height: 300px;
+  }
+  #nav{
+    font-size: .7em;
+  }
 }
